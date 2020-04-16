@@ -1,15 +1,22 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-// Imports our two components that render children...
-import MySection from './MySection';
-import MyButton from './MyButton';
+// We only need to import "MyComponent" since
+// the "First" and "Second" components are part
+// of this "namespace".
+import MyComponent from './MyComponent';
 
-// Renders the "MySection" element, which has a child
-// component of "MyButton", which in turn has child text.
+// Now we can render "MyComponent" elements,
+// and it's "namespaced" elements as children.
+// We don't actually have to use the namespaced
+// syntax here, we could import the "First" and
+// "Second" components and render them without the
+// "namespace" syntax. It's a matter of readability
+// and personal taste.
 render(
-  <MySection>
-    <MyButton>My Button Text</MyButton>
-  </MySection>,
+  <MyComponent>
+    <MyComponent.First />
+    <MyComponent.Second />
+  </MyComponent>,
   document.getElementById('root')
 );
