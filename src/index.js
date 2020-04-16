@@ -1,16 +1,19 @@
-// The "render()" function will render JSX markup and
-// place the resulting content into a DOM node. The "React"
-// object isn't explicitly used here, but it's used
-// by the transpiled JSX source.
 import React from 'react';
 import { render } from 'react-dom';
 
-// Renders the JSX markup. Notice the XML syntax
-// mixed with JavaScript? This is replaced by the
-// transpiler before it reaches the browser.
+// The render() function will only complain if the browser doesn't
+// recognize the tag
 render(
-  <p>
-    Hello, <strong>JSX</strong> <i>habits</i>
-  </p>,
+  <div>
+    <button />
+    <code />
+    <input />
+    <label />
+    <p />
+    <pre />
+    <select />
+    <table />
+    <ul />
+  </div>,
   document.getElementById('root')
 );
