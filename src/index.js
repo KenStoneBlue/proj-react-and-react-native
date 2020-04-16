@@ -14,4 +14,4 @@ render(
 // This fails with a "ReferenceError", because
 // tag names are case-sensitive. This goes against
 // the convention of using lower-case for HTML tag names.
-// render(<button />, document.getElementById('root'));
+// render(<Button />, document.getElementById('root'));
