@@ -1,17 +1,26 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-// This renders as expected, except for the "foo"
-// property, since this is not a recognized button
-// property.
+// This JSX markup describes some fairly-sophisticated
+// markup. Yet, it's easy to read, because it's XML and
+// XML is good for concisely-expressing hierarchical
+// structure. This is how we want to think of our UI,
+// when it needs to change, not as an individual element
+// or property.
 render(
-  <button title="My Button" foo="bar_ry">
-    My Bigg Button
-  </button>,
+  <section>
+    <header>
+      <h1>A Header</h1>
+    </header>
+    <nav>
+      <a href="item">Nav Item</a>
+    </nav>
+    <main>
+      <p>The main event content...</p>
+    </main>
+    <footer>
+      <small>&copy; 2018</small>
+    </footer>
+  </section>,
   document.getElementById('root')
 );
-
-// This fails with a "ReferenceError", because
-// tag names are case-sensitive. This goes against
-// the convention of using lower-case for HTML tag names.
-// render(<Button />, document.getElementById('root'));
