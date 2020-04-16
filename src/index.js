@@ -1,26 +1,25 @@
-import React from 'react';
+// We also need "Component" so that we can
+// extend it and make a new JSX tag.
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-// This JSX markup describes some fairly-sophisticated
-// markup. Yet, it's easy to read, because it's XML and
-// XML is good for concisely-expressing hierarchical
-// structure. This is how we want to think of our UI,
-// when it needs to change, not as an individual element
-// or property.
-render(
-  <section>
-    <header>
-      <h1>A Header</h1>
-    </header>
-    <nav>
-      <a href="item">Nav Item</a>
-    </nav>
-    <main>
-      <p>The main event content...</p>
-    </main>
-    <footer>
-      <small>&copy; 2018</small>
-    </footer>
-  </section>,
-  document.getElementById('root')
-);
+// "MyComponent" extends "Compoennt", which means that
+// we can now use it in JSX markup.
+class MyComponent extends Component {
+  render() {
+    // All components have a "render()" method, which
+    // retunrns some JSX markup. In this case, "MyComponent"
+    // encapsulates a larger HTML structure.
+    return (
+      <section>
+        <h1>My Component</h1>
+        <p>Content in my component...</p>
+      </section>
+    );
+  }
+}
+
+// Now when we render "<MyComponent>" tags, the encapsulated
+// HTML structure is actually rendered. These are the
+// building blocks of our UI.
+render(<MyComponent />, document.getElementById('root'));
