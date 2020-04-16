@@ -1,19 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-// The render() function will only complain if the browser doesn't
-// recognize the tag
+// This renders as expected, except for the "foo"
+// property, since this is not a recognized button
+// property.
 render(
-  <div>
-    <button />
-    <code />
-    <input />
-    <label />
-    <p />
-    <pre />
-    <select />
-    <table />
-    <ul />
-  </div>,
+  <button title="My Button" foo="bar_ry">
+    My Bigg Button
+  </button>,
   document.getElementById('root')
 );
+
+// This fails with a "ReferenceError", because
+// tag names are case-sensitive. This goes against
+// the convention of using lower-case for HTML tag names.
+// render(<button />, document.getElementById('root'));
