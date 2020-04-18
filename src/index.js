@@ -1,22 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-// We only need to import "MyComponent" since
-// the "First" and "Second" components are part
-// of this "namespace".
-import MyComponent from './MyComponent';
+// These constants are passed into the JSX
+// markup using the JavaScript expression syntax.
+const enabled = true;
+const text = 'Y Button';
+const placeholder = 'two inputs big value...';
+const size = 90;
 
-// Now we can render "MyComponent" elements,
-// and it's "namespaced" elements as children.
-// We don't actually have to use the namespaced
-// syntax here, we could import the "First" and
-// "Second" components and render them without the
-// "namespace" syntax. It's a matter of readability
-// and personal taste.
+// We're rendering a "<button>" and an "<input>"
+// element, both of which use the "{}" JavaScript
+// expression syntax to fill in property, and text
+// values.
 render(
-  <MyComponent>
-    <MyComponent.First />
-    <MyComponent.Second />
-  </MyComponent>,
+  <section>
+    <button disabled={!enabled}>{text}</button>
+    <input placeholder={placeholder} size={size} />
+  </section>,
   document.getElementById('root')
 );
