@@ -5,12 +5,15 @@ import Chance from 'chance';
 
 import MappingCollectionsToElements from './RenderingJSX/mapping-collections-to-elements.js';
 import BuiltInHtmlTags from './RenderingJSX/built-in-html-tags.js';
+import HtmlTagConventions from './RenderingJSX/html-tag-conventions.js';
+import DescribingUiStructures from './RenderingJSX/describing-ui-structures.js';
+import EncapsulatingHtml from './RenderingJSX/encapsulating-html.js';
+import NestingElements from './RenderingJSX/nesting-elements.js';
+import NamespacedComponents from './RenderingJSX/namespaced-components.js';
+import DynamicProps from './RenderingJSX/dynamic-props.js';
 
 var chance = new Chance();
-const enabled = true;
-const text = 'Y Button';
-const placeholder = 'two inputs big value...';
-const size = 90;
+
 
 
 
@@ -22,10 +25,17 @@ const size = 90;
 render(
   <section>
     <p>Hello, <strong>{chance.first()}</strong> from {chance.country({ full: true })} listening on {chance.radio()}</p>
-    <MappingCollectionsToElements  />
+
+    <h1>Rendering JSX</h1>
     <BuiltInHtmlTags  />
-    <button disabled={!enabled}>{text}</button>
-    <input placeholder={placeholder} size={size} />
+    <HtmlTagConventions  />
+    <DescribingUiStructures />
+    <EncapsulatingHtml />
+    <NestingElements />
+    <NamespacedComponents />
+    <DynamicProps />
+    <MappingCollectionsToElements  />
+
   </section>,
   document.getElementById('root')
 );

@@ -11,6 +11,7 @@ const object = {
 class MappingCollectionsToElements extends React.Component {
 
   render() {
+    console.log(array.map(i => <li key={i}>{i}</li>));
     return(
 
       <section>
@@ -30,8 +31,7 @@ class MappingCollectionsToElements extends React.Component {
         <ul>
           {Object.keys(object).map(i => (
             <li key={i}>
-              <strong>{i}: </strong>
-              {object[i]}
+              <strong>{i}: </strong> {object[i]}
             </li>
           ))}
         </ul>
