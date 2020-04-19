@@ -11,6 +11,7 @@ import EncapsulatingHtml from './RenderingJSX/encapsulating-html.js';
 import NestingElements from './RenderingJSX/nesting-elements.js';
 import NamespacedComponents from './RenderingJSX/namespaced-components.js';
 import DynamicProps from './RenderingJSX/dynamic-props.js';
+import JsxFragments from './RenderingJSX/jsx-fragments.js';
 
 var chance = new Chance();
 
@@ -35,6 +36,7 @@ render(
     <NamespacedComponents />
     <DynamicProps />
     <MappingCollectionsToElements  />
+    <JsxFragments />
 
   </section>,
   document.getElementById('root')
